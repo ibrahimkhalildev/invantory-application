@@ -718,6 +718,16 @@
     <Content Include="Views\Inventory\_InventoryHeader.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
     <Content Include="Views\Product\AddProduct.cshtml" />
+    <Content Include="Views\Product\CategoryList.cshtml" />
+    <Content Include="Views\Product\AddCategory.cshtml" />
+    <Content Include="Views\Product\SubcategoryList.cshtml" />
+    <Content Include="Views\Product\Addsubcategory.cshtml" />
+    <Content Include="Views\Product\Brandlist.cshtml" />
+    <Content Include="Views\Product\Addbrand.cshtml" />
+    <Content Include="Views\Product\Importproduct.cshtml" />
+    <Content Include="Views\Product\Barcode.cshtml" />
+    <Content Include="Views\Sales\Saleslist.cshtml" />
+    <Content Include="Views\Sales\Pos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -735,7 +745,6 @@
     <Folder Include="Views\Quotation\" />
     <Folder Include="Views\Report\" />
     <Folder Include="Views\Return\" />
-    <Folder Include="Views\Sales\" />
     <Folder Include="Views\Settings\" />
     <Folder Include="Views\Table\" />
     <Folder Include="Views\Transfer\" />

@@ -9,7 +9,11 @@ namespace Invantory_Project.Controllers
     public class SalesController : Controller
     {
         // GET: Sales
-        public ActionResult Index()
+        public ActionResult Saleslist()
+        {
+            return View();
+        }
+        public ActionResult Pos()
         {
             return View();
         }
