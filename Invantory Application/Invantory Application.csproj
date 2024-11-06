@@ -716,6 +716,8 @@
     <Content Include="Views\Inventory\Index.cshtml" />
     <Content Include="Views\Inventory\_InventoryLeftSidebar.cshtml" />
     <Content Include="Views\Inventory\_InventoryHeader.cshtml" />
+    <Content Include="Views\Product\ProductList.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -729,7 +731,6 @@
     <Folder Include="Views\Pages\" />
     <Folder Include="Views\People\" />
     <Folder Include="Views\Places\" />
-    <Folder Include="Views\Product\" />
     <Folder Include="Views\Purchase\" />
     <Folder Include="Views\Quotation\" />
     <Folder Include="Views\Report\" />
