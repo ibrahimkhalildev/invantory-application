@@ -16,16 +16,16 @@
                         </span> <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="productlist.html">Product List</a></li>
-                        <li><a href="addproduct.html">Add Product</a></li>
-                        <li><a href="categorylist.html">Category List</a></li>
-                        <li><a href="addcategory.html">Add Category</a></li>
-                        <li><a href="subcategorylist.html">Sub Category List</a></li>
-                        <li><a href="subaddcategory.html">Add Sub Category</a></li>
-                        <li><a href="brandlist.html">Brand List</a></li>
-                        <li><a href="addbrand.html">Add Brand</a></li>
-                        <li><a href="importproduct.html">Import Products</a></li>
-                        <li><a href="barcode.html">Print Barcode</a></li>
+                        <li>@Html.ActionLink("Product List", "ProductList", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Product", "AddProduct", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Category List", "CategoryList", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Category", "AddCategory", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Sub Category List", "SubcategoryList", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Sub Category", "Addsubcategory", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Brand List", "Brandlist", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Brand", "Addbrand", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Import Products", "Importproduct", "Product", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Print Barcode", "Barcode", "Product", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
                 </li>
                 <li class="submenu">
@@ -35,11 +35,11 @@
                         </span> <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="saleslist.html">Sales List</a></li>
-                        <li><a href="pos.html">POS</a></li>
-                        <li><a href="pos.html">New Sales</a></li>
-                        <li><a href="salesreturnlists.html">Sales Return List</a></li>
-                        <li><a href="createsalesreturns.html">New Sales Return</a></li>
+                        <li>@Html.ActionLink("Saleslist", "Saleslist", "Sales", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Pos", "Pos", "Sales", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("New Sales", "Pos", "Sales", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Sales Return List", "Salesreturnlist", "Sales", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("New Sales Return", "Createsalesreturn", "Sales", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
                 </li>
                 <li class="submenu">
@@ -49,9 +49,9 @@
                         </span> <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="purchaselist.html">Purchase List</a></li>
-                        <li><a href="addpurchase.html">Add Purchase</a></li>
-                        <li><a href="importpurchase.html">Import Purchase</a></li>
+                        <li>@Html.ActionLink("Purchase List", "PurchaseList", "Purchase", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Purchase", "AddPurchase", "Purchase", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Import Purchase", "ImportPurchase", "Purchase", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
                 </li>
                 <li class="submenu">
@@ -61,9 +61,9 @@
                         </span> <span class="menu-arrow"></span>
                     </a>
                     <ul>
-                        <li><a href="expenselist.html">Expense List</a></li>
-                        <li><a href="createexpense.html">Add Expense</a></li>
-                        <li><a href="expensecategory.html">Expense Category</a></li>
+                        <li>@Html.ActionLink("Expense List", "ExpenseList", "Expense", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Add Expense", "AddExpense", "Expense", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Expense Category", "ExpenseCategory", "Expense", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
                 </li>
                 <li class="submenu">

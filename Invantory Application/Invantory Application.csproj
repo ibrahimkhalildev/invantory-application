@@ -168,7 +168,6 @@
     <Content Include="assets\img\customer\profile3.jpg" />
     <Content Include="assets\img\customer\profile4.jpg" />
     <Content Include="assets\img\customer\profile5.jpg" />
-    <Content Include="assets\img\favicon.jpg" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\flags\de.png" />
     <Content Include="assets\img\flags\es.png" />
@@ -730,6 +729,13 @@
     <Content Include="Views\Sales\Saleslist.cshtml" />
     <Content Include="Views\Sales\Pos.cshtml" />
     <Content Include="Views\Sales\Salesreturnlist.cshtml" />
+    <Content Include="Views\Sales\Createsalesreturn.cshtml" />
+    <Content Include="Views\Purchase\PurchaseList.cshtml" />
+    <Content Include="Views\Purchase\AddPurchase.cshtml" />
+    <Content Include="Views\Purchase\ImportPurchase.cshtml" />
+    <Content Include="Views\Expense\ExpenseList.cshtml" />
+    <Content Include="Views\Expense\AddExpense.cshtml" />
+    <Content Include="Views\Expense\ExpenseCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -737,13 +743,11 @@
     <Folder Include="Views\Application\" />
     <Folder Include="Views\Charts\" />
     <Folder Include="Views\Elements\" />
-    <Folder Include="Views\Expense\" />
     <Folder Include="Views\Forms\" />
     <Folder Include="Views\Icons\" />
     <Folder Include="Views\Pages\" />
     <Folder Include="Views\People\" />
     <Folder Include="Views\Places\" />
-    <Folder Include="Views\Purchase\" />
     <Folder Include="Views\Quotation\" />
     <Folder Include="Views\Report\" />
     <Folder Include="Views\Return\" />
@@ -785,6 +789,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

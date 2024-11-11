@@ -21,6 +21,10 @@ namespace Invantory_Project.Controllers
         {
             return View();
         }
+        public ActionResult Createsalesreturn()
+        {
+            return View();
+        }
     }
 }
 

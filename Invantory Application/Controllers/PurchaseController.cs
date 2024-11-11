@@ -9,7 +9,15 @@ namespace Invantory_Project.Controllers
     public class PurchaseController : Controller
     {
         // GET: Purchase
-        public ActionResult Index()
+        public ActionResult PurchaseList()
+        {
+            return View();
+        }
+        public ActionResult AddPurchase()
+        {
+            return View();
+        }
+        public ActionResult ImportPurchase()
         {
             return View();
         }
