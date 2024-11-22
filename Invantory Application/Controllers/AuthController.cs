@@ -27,6 +27,7 @@ namespace Invantory_Application.Controllers
             }
             return View();
         }
+        //logout system 
         [HttpPost]
         public ActionResult Logout() 
         {
