@@ -9,7 +9,7 @@ namespace Invantory_Project.Controllers
     public class InventoryController : Controller
     {
         // GET: Inventory
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             return View();
         }

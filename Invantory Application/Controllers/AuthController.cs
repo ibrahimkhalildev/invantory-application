@@ -13,5 +13,23 @@ namespace Invantory_Application.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(string UserName, string Password)
+        {
+            if (UserName == "admin" && Password == "123")
+            {
+
+                ViewBag.Msg = "You are Lgged in Successfully!";
+            }
+            else
+            {
+                ViewBag.Msg = "Login Failed, Try Again!";
+            }
+            return View();
+        }
+        public ActionResult Login2()
+        {
+            return View();
+        }
     }
 }
