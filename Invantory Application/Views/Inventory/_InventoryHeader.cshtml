@@ -219,10 +219,11 @@
                         {
                             if (Session["UserName"].ToString() != "")
                             {
-                                <form action="@Url.Action("Logout","Auth")" method="post">
+                                <a href="@Url.Action("Logout","Auth")">logout</a>
+                                @*<form action="@Url.Action("Logout","Auth")" method="post">
                                     <input type="submit" value="Logout" class="btn btn-info" />
                                     <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
-                                </form>
+                                </form>*@
                             }
                         }
                     

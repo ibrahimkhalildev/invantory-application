@@ -26,9 +26,7 @@ namespace Invantory_Application.Controllers
                 ViewBag.Msg = "Incorrect Username or Password!";
             }
             return View();
-        }
-        //logout system 
-        [HttpPost]
+        } 
         public ActionResult Logout() 
         {
             Session.Remove("UserName");

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
-
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
     <script>
         ////Ligacy Js
         //window.addEventListener("DOMContentLoaded", function () {
@@ -31,10 +31,10 @@
 
         $(document).ready(function () {
             if (AlertMsg != '') {
-                if (AlertMsg == 'Incorrect Username or Password') {
+                if (AlertMsg == 'Incorrect Username or Password!') {
                     $('#Login_info_Msg').css('color', 'red');
                 }
-                if (AlertMsg == 'You are Logged in Successfully') {
+                if (AlertMsg == 'You are Logged in Successfully!') {
                     $('#Login_info_Msg').css('color', 'green');
                     setTimeout(function () {
                         window.location.href = '@Url.Action("Index", "Home")';
@@ -126,7 +126,7 @@
     </div>
 
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+   
     <script src="~/assets/js/feather.min.js"></script>
     <script src="~/assets/js/script.js"></script>
 </body>
