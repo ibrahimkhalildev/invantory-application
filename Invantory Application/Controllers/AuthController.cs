@@ -16,20 +16,21 @@ namespace Invantory_Application.Controllers
         [HttpPost]
         public ActionResult Login(string UserName, string Password)
         {
-            if (UserName == "admin" && Password == "123")
+            if (UserName == "ibrahim" && Password == "123")
             {
-
-                ViewBag.Msg = "You are Lgged in Successfully!";
+                Session["UserName"] = UserName;
+                ViewBag.Msg = "You are Logged in Successfully!";
             }
             else
             {
-                ViewBag.Msg = "Login Failed, Try Again!";
+                ViewBag.Msg = "Incorrect Username or Password!";
             }
             return View();
-        }
-        public ActionResult Login2()
+        } 
+        public ActionResult Logout() 
         {
-            return View();
+            Session.Remove("UserName");
+            return RedirectToAction("Login");
         }
     }
 }

@@ -191,7 +191,7 @@
                             <span class="status online"></span>
                         </span>
                         <div class="profilesets">
-                            <h6>John Doe</h6>
+                            <h6>@Session["UserName"]</h6>
                             <h5>Admin</h5>
                         </div>
                     </div>
@@ -205,9 +205,29 @@
                            data-feather="settings"></i>Settings
                     </a>
                     <hr class="m-0">
-                    <a class="dropdown-item logout pb-0" href="signin.html">
-                        <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
-                    </a>
+
+                    @*have to implement it without button*@
+                    @*<form action="@Url.Action("Logout","Auth")" method="post">
+            <a class="dropdown-item logout pb-0">
+                <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
+            </a>
+        </form>*@
+
+
+                    @{
+                        if (Session["UserName"] != null)
+                        {
+                            if (Session["UserName"].ToString() != "")
+                            {
+                                <a href="@Url.Action("Logout","Auth")">logout</a>
+                                @*<form action="@Url.Action("Logout","Auth")" method="post">
+                                    <input type="submit" value="Logout" class="btn btn-info" />
+                                    <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
+                                </form>*@
+                            }
+                        }
+                    
+                    }
                 </div>
             </div>
         </li>
