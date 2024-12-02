@@ -714,7 +714,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_InvatoryLayout.cshtml" />
-    <Content Include="Views\Inventory\Index.cshtml" />
+    <Content Include="Views\Inventory\Dashboard.cshtml" />
     <Content Include="Views\Inventory\_InventoryLeftSidebar.cshtml" />
     <Content Include="Views\Inventory\_InventoryHeader.cshtml" />
     <Content Include="Views\Product\ProductList.cshtml" />
@@ -738,6 +738,7 @@
     <Content Include="Views\Expense\AddExpense.cshtml" />
     <Content Include="Views\Expense\ExpenseCategory.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Auth\Login2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
