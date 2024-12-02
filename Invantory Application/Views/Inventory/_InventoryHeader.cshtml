@@ -212,21 +212,20 @@
                 <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
             </a>
         </form>*@
-
-
                     @{
                         if (Session["UserName"] != null)
                         {
                             if (Session["UserName"].ToString() != "")
                             {
-                                <a href="@Url.Action("Logout","Auth")">logout</a>
+                                        <a class="dropdown-item logout pb-0" href="@Url.Action("Logout","Auth")">
+                                            <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
+                                        </a>
                                 @*<form action="@Url.Action("Logout","Auth")" method="post">
                                     <input type="submit" value="Logout" class="btn btn-info" />
                                     <img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout
                                 </form>*@
                             }
                         }
-                    
                     }
                 </div>
             </div>
