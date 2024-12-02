@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Invantory_Application.Models;
+
+
+@{
     Layout = "~/Views/Shared/_InvatoryLayout.cshtml";
 }
 
@@ -6,20 +9,65 @@
     ViewBag.Title = "Home Page";
 }
 
-<main aria-labelledby="title">
-    <h2 id="title">Welcome @Session["UserName"]</h2>
-    <h2 id="title">@ViewBag.Title.</h2>
-    @*<h3>@ViewBag.Message</h3>*@
 
-    <p>Use this area to provide additional information.</p>
-</main>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <main aria-labelledby="title">
+                <h2 id="title">Welcome @Session["UserName"]</h2>
+                <h2 id="title">@ViewBag.Title.</h2>
+                @*<h3>@ViewBag.Message</h3>*@
+
+                @{
+                    // //Best Practice
+                    Member objModel = (Member)Session["AutmemberInfo"];
+
+                    ////Not Best Practice
+                    //Member objModel = new Member();
+                    //if (Session["UserName"] != null)
+                    //{
+                    //    objModel.ValidateMember(Session["UserName"].ToString(), "");
+                    //}
+                }
+                <h2>Dashboard - @objModel.Name</h2>
+
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Equipment Id</th>
+                            <th>Equipment Name</th>
+                            <th>Quantity</th>
+                            <th>Stock</th>
+                            <th>Entry Date</th>
+                        </tr>
+                    </thead>
+                    @{
+                        //List<BaseEquipment> equipment = (List<BaseEquipment>)ViewBag.equipment;
+                        EquipmentN baseEquipment = new EquipmentN();
+                        List<EquipmentN> equipment = baseEquipment.ListEquipment();
+                        foreach (EquipmentN obj in equipment)
+                        {
+                            <tr>
+                                <td>@obj.EquipmentId</td>
+                                <td>@obj.EquipmentName</td>
+                                <td>@obj.Quantity</td>
+                                <td>@obj.Stock</td>
+                                <td>@obj.EntryDate</td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </main>
+        </div>
+    </div>
+</div>
 
 <div class="content">
     <div class="row">
         <div class="col-lg-3 col-sm-6 col-12">
             <div class="dash-widget">
                 <div class="dash-widgetimg">
-                    <span><img src="~/assets/img/icons/dash1.svg" alt="img" /></span>                
+                    <span><img src="~/assets/img/icons/dash1.svg" alt="img" /></span>
                 </div>
                 <div class="dash-widgetcontent">
                     <h5>$<span class="counters" data-count="307144.00">$307,144.00</span></h5>
@@ -65,6 +113,16 @@
                 <div class="dash-counts">
                     <h4>100</h4>
                     <h5>Customers</h5>
+
+
+                    *
+                    *
+                    *
+
+
+
+
+
                 </div>
                 <div class="dash-imgs">
                     <i data-feather="user"></i>

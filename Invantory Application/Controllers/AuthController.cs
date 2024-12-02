@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Invantory_Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,9 +17,12 @@ namespace Invantory_Application.Controllers
         [HttpPost]
         public ActionResult Login(string UserName, string Password)
         {
-            if (UserName == "ibrahim" && Password == "123")
+            Member objMember = new Member();
+            objMember.ValidateMember(UserName, Password);
+            if (objMember.Name != "") //(UserName == "ibrahim" && Password == "123")
             {
-                Session["UserName"] = UserName;
+                Session["UserName"] = UserName; //+ "("+objMember.Role + ")";
+                Session["AutmemberInfo"] = objMember;
                 ViewBag.Msg = "You are Logged in Successfully!";
             }
             else
