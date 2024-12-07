@@ -11,11 +11,14 @@ namespace Invantory_Application.Models
     [Serializable]
     public class EquipmentN
     {
+        private object equipment;
+
         public int EquipmentId { set; get; }
         public string EquipmentName { set; get; }
         public int Quantity { set; get; }
         public int Stock { set; get; }
         public DateTime EntryDate { set; get; }
+        public DateTime ReceivedDate { set; get; }
 
         public List<EquipmentN> ListEquipment()
         {
@@ -51,7 +54,7 @@ namespace Invantory_Application.Models
                         objBaseequipment.Stock = Convert.ToInt32(reader["Stock"].ToString());
                         //objBaseequipment.EntryDate = reader["EntryDate"].ToString("dd/MM/yyyy");
                         objBaseequipment.EntryDate = Convert.ToDateTime(reader["EntryDate"]);
-                        //objBaseequipment.EntryDate = Convert.ToDateTime(reader["EntryDate"].ToString());
+                        objBaseequipment.ReceivedDate = Convert.ToDateTime(reader["ReceivedDate"]);
 
                         equipment.Add(objBaseequipment);
                     }
@@ -72,6 +75,41 @@ namespace Invantory_Application.Models
                 sqlConnection.Dispose();
             }
             return equipment;
+        }
+
+        public int SaveEquipment()
+        {
+            int ReturnCase = 0;
+            string ConnString = ConfigurationManager.ConnectionStrings["connstring"].ToString();
+            SqlConnection sqlConnection = new SqlConnection(ConnString);
+            sqlConnection.Open();
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnection;
+                cmd.CommandText = "spOST_InsEquipment";
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add(new SqlParameter("@Name", this.EquipmentName));
+                cmd.Parameters.Add(new SqlParameter("@EcCount", this.Quantity));
+                cmd.Parameters.Add(new SqlParameter("@ReceiveDate", this.ReceivedDate));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 0;
+                ReturnCase = cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
+            }
+            return ReturnCase;
         }
     }
 }
