@@ -14,6 +14,10 @@
     function ShowEquipmentEntryDialog() {
         $('#divModelEquipment').dialog();
     }
+
+    function ShowAssignmentEntryDialog() {
+        $('#divModelEquipmentAssignment').dialog();
+    }
 </script>
 
 <div class="container">
@@ -51,6 +55,7 @@
                     @*<table class="table table-striped table-hover table-bordered">*@
 
                     @Html.Partial("~/Views/Common/_EquipmentEntryPage.cshtml")
+                    @Html.Partial("~/Views/Common/_EquipmentAssign.cshtml")
 
                     <div style="width: 95%; height: 450px; overflow: auto">
                         <table class="table table-bordered border-primary">
@@ -91,7 +96,7 @@
                     Employee Assignment List
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info mb-2" onclick="ShowEquipmentEntryDialog()">Add New Employee</a>
+                    <a class="btn btn-info mb-2" onclick="ShowAssignmentEntryDialog()">Add New Employee</a>
                     @{
                         System.Data.DataTable dt = Employee.ListEmpAssignHist();
                         var pDataTable = (from p in dt.AsEnumerable()

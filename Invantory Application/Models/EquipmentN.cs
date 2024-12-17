@@ -19,7 +19,6 @@ namespace Invantory_Application.Models
         public int Stock { set; get; }
         public DateTime EntryDate { set; get; }
         public DateTime ReceivedDate { set; get; }
-
         public List<EquipmentN> ListEquipment()
         {
             List<EquipmentN> equipment = new List<EquipmentN>();
@@ -47,14 +46,14 @@ namespace Invantory_Application.Models
                     if (reader.HasRows)
                     {
                         EquipmentN objBaseequipment = new EquipmentN();
-
+                        //EquipmentId	EquipmentName	Quantity	Stock	EntryDate	ReceiveDate 
                         objBaseequipment.EquipmentId = Convert.ToInt32(reader["EquipmentId"].ToString());
                         objBaseequipment.EquipmentName = Convert.ToString(reader["EquipmentName"].ToString());
                         objBaseequipment.Quantity = Convert.ToInt32(reader["Quantity"].ToString());
                         objBaseequipment.Stock = Convert.ToInt32(reader["Stock"].ToString());
                         //objBaseequipment.EntryDate = reader["EntryDate"].ToString("dd/MM/yyyy");
                         objBaseequipment.EntryDate = Convert.ToDateTime(reader["EntryDate"]);
-                        objBaseequipment.ReceivedDate = Convert.ToDateTime(reader["ReceivedDate"]);
+                        objBaseequipment.ReceivedDate = Convert.ToDateTime(reader["ReceiveDate"]);
 
                         equipment.Add(objBaseequipment);
                     }
@@ -67,6 +66,8 @@ namespace Invantory_Application.Models
             }
             catch (Exception ex)
             {
+                throw new ApplicationException("Invalid note data recieved!  Correct the following issues and try again:"+ex.StackTrace);
+
 
             }
             finally

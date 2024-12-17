@@ -41,5 +41,45 @@ namespace Invantory_Application.Models
             }
             return dt;
         }
+
+        public static int SaveAssignment(int CustomerID, int EquipmentID, int EquiCount)
+        {
+            int ReturnCase = 0;
+            string ConnString = ConfigurationManager.ConnectionStrings["connstring"].ToString();
+            SqlConnection sqlConnection = new SqlConnection(ConnString);
+            sqlConnection.Open();
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = sqlConnection;
+                cmd.CommandText = "spOST_InsEquiAssignment";
+                cmd.Parameters.Clear();
+                cmd.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
+                cmd.Parameters.Add(new SqlParameter("@EquipmentID", EquipmentID));
+                cmd.Parameters.Add(new SqlParameter("@EquiCount", EquiCount));
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 0;
+                ReturnCase = cmd.ExecuteNonQuery();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
+            }
+            return ReturnCase;
+        }
+
+        internal static int SaveAssignment(string v1, string v2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
