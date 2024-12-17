@@ -17,6 +17,9 @@ namespace Invantory_Project.Controllers
             List<EquipmentN> equipment = baseEquipment.ListEquipment();
             ViewBag.equipment = equipment;
 
+            List<EquipmentN> DDLEquipment = baseEquipment.LoadEquipmentDDL();
+            ViewBag.DDLEquipment = DDLEquipment;
+
             return View();
         }
         public ActionResult SaveEquipment(FormCollection frmCollection)
@@ -58,7 +61,7 @@ namespace Invantory_Project.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetName()
+        public JsonResult GetName(int memberType) //int memberType  //Controller Name/Json Function Name ||
         {
             //var Human = new
             //{
@@ -84,5 +87,22 @@ namespace Invantory_Project.Controllers
             return Json(My_Members, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult SaveName(Member member)
+        {
+            return Json(member.Name, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public JsonResult DoSum(int b, int v)
+        {
+            return Json((b + v), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult DoSubstract(int x, int y) 
+        {
+            return Json((x-y),JsonRequestBehavior.AllowGet);
+        }
     }
 }

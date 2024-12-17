@@ -19,6 +19,50 @@ namespace Invantory_Application.Models
         public int Stock { set; get; }
         public DateTime EntryDate { set; get; }
         public DateTime ReceivedDate { set; get; }
+
+        public List<EquipmentN> LoadEquipmentDDL()
+        {
+            List<EquipmentN> DDL_Equipment_Name = new List<EquipmentN>();
+
+            string ConnString = ConfigurationManager.ConnectionStrings["connstring"].ToString();
+            SqlConnection sqlConnection = new SqlConnection(ConnString);
+            sqlConnection.Open();
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Connection = sqlConnection;
+                cmd.CommandText = "dbo.spShowingNameInstead_Of_ID";
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandTimeout = 0;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (reader.HasRows)
+                    {
+                        EquipmentN objBaseequipment = new EquipmentN();
+                        objBaseequipment.EquipmentId = Convert.ToInt32(reader["EquipmentId"].ToString());
+                        objBaseequipment.EquipmentName = Convert.ToString(reader["EquipmentName"].ToString());
+                        DDL_Equipment_Name.Add(objBaseequipment);
+                    }
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Invalid note data recieved!  Correct the following issues and try again:" + ex.StackTrace);
+
+            }
+            finally
+            {
+                sqlConnection.Close();
+                sqlConnection.Dispose();
+            }
+            return DDL_Equipment_Name;
+        }
         public List<EquipmentN> ListEquipment()
         {
             List<EquipmentN> equipment = new List<EquipmentN>();
