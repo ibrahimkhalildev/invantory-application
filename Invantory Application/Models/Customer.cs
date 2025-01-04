@@ -10,7 +10,5 @@ namespace Invantory_Application.Models
         //CustomerID	CustomerName
         public int CustomerID { get; set; }
         public string CustomerName { get; set; }
-
-
     }
 }

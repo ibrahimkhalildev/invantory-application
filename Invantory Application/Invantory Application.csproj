@@ -129,7 +129,7 @@
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\ReturnController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
-    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SettingController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Controllers\TransferController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -734,6 +734,7 @@
     <Content Include="Scripts\JqueryUI\jquery-ui.theme.css" />
     <Content Include="Scripts\JqueryUI\jquery-ui.theme.min.css" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Uploads\MyProfilePicture.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -776,6 +777,8 @@
     <Content Include="Views\Auth\Login2.cshtml" />
     <Content Include="Views\Common\_EquipmentEntryPage.cshtml" />
     <Content Include="Views\Common\_EquipmentAssign.cshtml" />
+    <Content Include="Views\Setting\MyProfile.cshtml" />
+    <Content Include="Views\Setting\GeneralSetting.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -790,7 +793,6 @@
     <Folder Include="Views\Quotation\" />
     <Folder Include="Views\Report\" />
     <Folder Include="Views\Return\" />
-    <Folder Include="Views\Settings\" />
     <Folder Include="Views\Table\" />
     <Folder Include="Views\Transfer\" />
     <Folder Include="Views\Users\" />

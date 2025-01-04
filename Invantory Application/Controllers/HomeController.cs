@@ -26,5 +26,11 @@ namespace Invantory_Project.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Contact(HttpPostedFileBase FileUpload)
+        {
+            string FileName = FileUpload.FileName;
+            return View();
+        }
     }
 }

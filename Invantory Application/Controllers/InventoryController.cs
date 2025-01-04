@@ -33,7 +33,8 @@ namespace Invantory_Project.Controllers
 
             equipmentN.EquipmentName = frmCollection["txtEquipmentName"].ToString();
             equipmentN.Quantity = Convert.ToInt32(frmCollection["txtEquipmentQuantity"].ToString());
-            equipmentN.ReceivedDate = DateTime.ParseExact(frmCollection["txtEquipmentReceivedvDate"].ToString(), "dd/MM/yyyy", null);
+           // equipmentN.ReceivedDate = Convert.ToDateTime(frmCollection["txtEquipmentReceivedvDate"]);
+            equipmentN.ReceivedDate = DateTime.ParseExact(frmCollection["txtEquipmentReceivedvDate"].ToString(), "MM/dd/yyyy", null);
             int returnResult = equipmentN.SaveEquipment();
 
             Session["OpMsg"] = "Operation Failed";
@@ -46,12 +47,11 @@ namespace Invantory_Project.Controllers
         }
         public ActionResult SaveAssignment(FormCollection frmCollection)
         {
+            int custid = Convert.ToInt32(frmCollection["txtCustomerID"].ToString());
+            int equipId = Convert.ToInt32(frmCollection["txtEquipmentID"].ToString());
+            int equipCount = Convert.ToInt32(frmCollection["txtEquipmentCount"].ToString());
 
-            int returnResult = Employee.SaveAssignment(
-                Convert.ToInt32(frmCollection["txtCustomerID"].ToString()), 
-                Convert.ToInt32(frmCollection["txtEquipmentID"].ToString()),
-                Convert.ToInt32(frmCollection["txtEquipmentCount"].ToString())
-            );
+            int returnResult = Employee.SaveAssignment(custid,equipId,equipCount);
             Session["OpMsg"] = "Operation Failed";
             if (returnResult == 1)
             {

@@ -1,4 +1,5 @@
-﻿@model Invantory_Application.Models.EquipmentN
+﻿@*@model Invantory_Application.Models.EquipmentN*@
+@model IEnumerable<Invantory_Application.Models.EquipmentN>
 
 <div id="divModelEquipmentAssignment" style="width:400px; height:500px; display:none;">
     <div class="card">
@@ -14,7 +15,14 @@
                     <div class="input-group input-group-sm mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Equipment Name</span>
                         @*<input name="txtEquipmentID" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">*@
-                        @Html.DropDownListFor(model=> model.EquipmentName, new SelectList(ViewBag.DDLEquipment,Model.EquipmentName))
+                        <select asp-for="txtEquipmentID" class="control-label">
+                            <option value="">-- Select Equipment --</option>
+                            @foreach(var equipment in Model)
+                                {
+                                    <option value="@equipment.EquipmentId"> @equipment.EquipmentName</option>
+                                }
+                        </select>
+                     
                     </div>
                     <div class="input-group input-group-sm mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
@@ -29,3 +37,6 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>
