@@ -20,21 +20,29 @@
     <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
-
+    <script src="~/Scripts/jquery-3.7.0.min.js"></script>
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css " rel="stylesheet">
     <script>
+        ////Ligacy Js
+        //window.addEventListener("DOMContentLoaded", function () {
+        //})
+        //function onloadCaller() {
+        //}
         var AlertMsg = '@ViewBag.Msg';
+
         $(document).ready(function () {
             if (AlertMsg != '') {
-                if (AlertMsg == 'Login Failed, Try Again!') {
+                if (AlertMsg == 'Incorrect Username or Password!') {
                     $('#Login_info_Msg').css('color', 'red');
                 }
-                if (AlertMsg == 'You are Lgged in Successfully!') {
-                    $('#Login_info_Msg').css('color', 'green')
+                if (AlertMsg == 'You are Logged in Successfully!') {
+                    showAlert();
+                    $('#Login_info_Msg').css('color', 'green');
                     setTimeout(function () {
                         window.location.href = '@Url.Action("Dashboard", "Inventory")';
                     }, 2000)
                 }
-                $('#Login_info_Msg').text('AlertMsg')
+                $('#Login_info_Msg').text(AlertMsg)
             }
         })
 
@@ -52,12 +60,14 @@
                             <img src="~/assets/img/logo.png" alt="img">
                         </div>
                         <div class="login-userheading">
+                            <h4>Debug Msg: @ViewBag.Msg</h4>
+
                             <h3>Sign In</h3>
                             <h4>Please login to your account</h4>
                         </div>
 
                         @*Login Form Start*@
-                        <form action="@Url.Action(" Login","Auth")" method="post">
+                        <form action="@Url.Action("Login","Auth")" method="post">
                             <div class="form-login">
                                 <label>Email</label>
                                 <div class="form-addons">
@@ -79,11 +89,12 @@
                                 </div>
                             </div>
                             <div class="form-login">
-                                <h4 id="Login_info_Msg" style="color:forestgreen">Login Successful!</h4>
+                                <h4 id="Login_info_Msg" style="color:forestgreen"></h4>
                                 <button type="submit" name="submit" class="btn btn-login">Sign In</button>
                             </div>
                         </form>
                         @*Login Form End*@
+
 
                         <div class="signinform text-center">
                             <h4>Don’t have an account? <a href="signup.html" class="hover-a">Sign Up</a></h4>
@@ -116,11 +127,19 @@
         </div>
     </div>
 
-
-    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js "></script>
     <script src="~/assets/js/feather.min.js"></script>
-    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/js/script.js"></script>
+    <script>
+        function showAlert() {
+            Swal.fire({
+                title: "Login Successful!",
+                text: "You clicked the button!",
+                icon: "success"
+            });
+        }     
+    </script>
 </body>
 
 </html>
