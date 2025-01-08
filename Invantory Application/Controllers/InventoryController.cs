@@ -112,8 +112,8 @@ namespace Invantory_Project.Controllers
             return View(); 
         }
 
-        public JsonResult EquipmentByCustomer(int CustomerId) // http://localhost:60333/Inventory/EquipmentByCustomer?CustomerId=1
-        
+        public JsonResult GetEquipment(int CustomerId) // http://localhost:60333/Inventory/GetEquipment?CustomerId=1
+
         {
             CustomerList customerList = new CustomerList();
             var customerdata=  customerList.Query_for_Equipment_List(CustomerId);
