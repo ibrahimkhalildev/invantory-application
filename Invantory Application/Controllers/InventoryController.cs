@@ -104,5 +104,21 @@ namespace Invantory_Project.Controllers
         {
             return Json((x-y),JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult EquipmentByCustomerData() 
+        {
+            CustomerList customerList = new CustomerList();
+            customerList.Query_for_Equipment_List(1);
+            return View(); 
+        }
+
+        public JsonResult EquipmentByCustomer(int CustomerId) // http://localhost:60333/Inventory/EquipmentByCustomer?CustomerId=1
+        
+        {
+            CustomerList customerList = new CustomerList();
+            var customerdata=  customerList.Query_for_Equipment_List(CustomerId);
+            return Json(customerdata, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
