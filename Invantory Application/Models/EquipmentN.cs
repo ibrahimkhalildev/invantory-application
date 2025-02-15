@@ -12,14 +12,12 @@ namespace Invantory_Application.Models
     public class EquipmentN
     {
         private object equipment;
-
         public int EquipmentId { set; get; }
         public string EquipmentName { set; get; }
         public int Quantity { set; get; }
         public int Stock { set; get; }
         public DateTime EntryDate { set; get; }
         public DateTime ReceivedDate { set; get; }
-
         public List<EquipmentN> LoadEquipmentDDL()
         {
             List<EquipmentN> DDL_Equipment_Name = new List<EquipmentN>();

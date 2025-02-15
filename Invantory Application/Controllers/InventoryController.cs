@@ -59,7 +59,6 @@ namespace Invantory_Project.Controllers
             }
             return RedirectToAction("Dashboard");
         }
-
         [HttpGet]
         public JsonResult GetName(int memberType) //int memberType  //Controller Name/Json Function Name ||
         {
@@ -86,13 +85,11 @@ namespace Invantory_Project.Controllers
 
             return Json(My_Members, JsonRequestBehavior.AllowGet);
         }
-
         [HttpPost]
         public JsonResult SaveName(Member member)
         {
             return Json(member.Name, JsonRequestBehavior.AllowGet);
         }
-
         [HttpGet]
         public JsonResult DoSum(int b, int v)
         {
@@ -104,14 +101,12 @@ namespace Invantory_Project.Controllers
         {
             return Json((x-y),JsonRequestBehavior.AllowGet);
         }
-
         public ActionResult EquipmentByCustomerData() 
         {
             CustomerList customerList = new CustomerList();
             customerList.Query_for_Equipment_List(1);
             return View(); 
         }
-
         public JsonResult GetEquipment(int CustomerId) // http://localhost:60333/Inventory/GetEquipment?CustomerId=1
 
         {
@@ -119,6 +114,5 @@ namespace Invantory_Project.Controllers
             var customerdata=  customerList.Query_for_Equipment_List(CustomerId);
             return Json(customerdata, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

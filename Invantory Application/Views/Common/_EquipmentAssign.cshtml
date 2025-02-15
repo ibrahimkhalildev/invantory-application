@@ -15,7 +15,7 @@
                     <div class="input-group input-group-sm mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Equipment Name</span>
                         @*<input name="txtEquipmentID" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">*@
-                        <select asp-for="txtEquipmentID" class="control-label">
+                        <select asp-for="txtEquipmentID" class="control-label" name="txtEquipmentID">
                             <option value="">-- Select Equipment --</option>
                             @foreach(var equipment in Model)
                                 {
