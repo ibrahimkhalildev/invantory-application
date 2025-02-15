@@ -12,7 +12,7 @@ namespace Invantory_Application.Models
     public class Member
     {
         public int id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } // {"Name" : "Test Name"}
         public string Age { get; set; }
         public string ServiceType { get; set; }
         public string Password { get; set; }

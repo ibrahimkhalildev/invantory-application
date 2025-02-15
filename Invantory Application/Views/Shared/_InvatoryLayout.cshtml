@@ -24,17 +24,29 @@
     <link href="~/assets/plugins/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="~/assets/css/style.css" rel="stylesheet" />
 
-    @Scripts.Render("~/bundles/jquery")
+    @* @Scripts.Render("~/bundles/jquery")*@
+    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
     <script src="~/Scripts/JqueryUI/jquery-ui.min.js"></script>
     <link href="~/Scripts/JqueryUI/jquery-ui.min.css" rel="stylesheet" />
 
     @{
         string CurrentUser = "";
+        string OpMsg = "";
+
         if (Session["UserName"] != null)
         {
             if (Session["UserName"].ToString() != "")
             {
                 CurrentUser = Session["UserName"].ToString();
+            }
+        }
+
+        if (Session["OpMsg"] != null)
+        {
+            if (Session["OpMsg"].ToString() != "")
+            {
+                OpMsg = Session["OpMsg"].ToString();
+                Session.Remove("OpMsg");
             }
         }
     }
@@ -46,8 +58,33 @@
             if (CurrUser == "") {
                 window.location.href = '@Url.Action("Login", "Auth")';
             }
-            })
+        })
+
+        var OpMsg = '@OpMsg';
+        $(document).ready(function () {
+            if (OpMsg != "") {
+                $('#alertMsg').html(OpMsg);
+                $("#dialog-message").dialog({
+                    modal: true,
+                    buttons: {
+                        Ok: function () {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+                OpMsg = "";
+            }
+            $(".clsDatePicker").datepicker({
+                format: 'dd/mm/yy'
+            });
+        })
+
     </script>
+    <style>
+        #ui-datepicker-div{
+            z-index: 1000 !important;
+        }
+    </style>
 
 </head>
 
@@ -68,8 +105,13 @@
         </div>
     </div>
 
+    <div id="dialog-message" title="Alert">
+        <p id="alertMsg">
+            <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+            Your files have downloaded successfully into the My Downloads folder.
+        </p>
+    </div>
 
-    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
     <script src="~/assets/js/feather.min.js"></script>
     <script src="~/assets/js/jquery.slimscroll.min.js"></script>
     <script src="~/assets/js/jquery.dataTables.min.js"></script>
