@@ -1,24 +1,24 @@
 ﻿<div id="divModelEquipment" style="width:400px; height:500px; display:none;">
     <div class="card">
         <div class="card-header">
-            Featured
+            Product Add
             <div class="card-body">
 
                 <form method="post" action="@Url.Action("SaveEquipment","Inventory")">
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Equipment Name</span>
-                        <input name="txtEquipmentName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Product Name</span>
+                        <input name="txtEquipmentName" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Equipment Quantity</span>
-                        <input name="txtEquipmentQuantity" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Product Quantity</span>
+                        <input name="txtEquipmentQuantity" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Receive Date</span>
-                        <input name="txtEquipmentReceivedvDate" type="text" class="form-control clsDatePicker" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Received Date</span>
+                        <input name="txtEquipmentReceivedvDate" type="text" class="form-control clsDatePicker" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                     <div>
-                        <input type="submit" class="btn btn-primary" value="Save">
+                        <input type="submit" class="btn btn-primary" value="Add Product">
                     </div>
 
                 </form>

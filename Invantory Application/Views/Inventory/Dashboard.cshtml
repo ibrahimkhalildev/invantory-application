@@ -48,10 +48,10 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    Equipment Assignment List
+                    Product List
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info mb-2" onclick="ShowEquipmentEntryDialog()">Add New Equipment</a>
+                    <a class="btn btn-info mb-2" onclick="ShowEquipmentEntryDialog()">Add New Product</a>
                     @*<table class="table table-striped table-hover table-bordered">*@
 
                     @Html.Partial("~/Views/Common/_EquipmentEntryPage.cshtml")
@@ -62,8 +62,8 @@
                         <table class="table table-bordered border-primary">
                             <thead>
                                 <tr class="table-warning">
-                                    <th>Equipment Id</th>
-                                    <th>Equipment Name</th>
+                                    <th>Product Id</th>
+                                    <th>Product Name</th>
                                     <th>Quantity</th>
                                     <th>Stock</th>
                                     <th>Entry Date</th>
@@ -94,10 +94,10 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    Employee Assignment List
+                    Assigned Product List
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-info mb-2" onclick="ShowAssignmentEntryDialog()">Add New Employee</a>
+                    <a class="btn btn-info mb-2" onclick="ShowAssignmentEntryDialog()">Assign Product</a>
                     @{
                         System.Data.DataTable dt = Employee.ListEmpAssignHist();
                         var pDataTable = (from p in dt.AsEnumerable()
