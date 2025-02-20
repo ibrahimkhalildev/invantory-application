@@ -4,7 +4,7 @@
 <div id="divModelEquipmentAssignment" style="width:400px; height:500px; display:none;">
     <div class="card">
         <div class="card-header">
-            Assignment
+            Product Assignment
             <div class="card-body">
                 <form method="post" action="@Url.Action("SaveAssignment","Inventory")">
                     <div class="input-group input-group-sm mb-3">
@@ -12,10 +12,10 @@
                         <input name="txtCustomerID" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Equipment Name</span>
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Product Name</span>
                         @*<input name="txtEquipmentID" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">*@
                         <select asp-for="txtEquipmentID" class="control-label" name="txtEquipmentID" required>
-                            <option value="">-- Select Equipment --</option>
+                            <option value=""> Select Product </option>
                             @foreach(var equipment in Model)
                                 {
                                     <option value="@equipment.EquipmentId"> @equipment.EquipmentName</option>
@@ -23,11 +23,11 @@
                         </select>
                     </div>
                     <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Product Quantity</span>
                         <input name="txtEquipmentCount" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" required>
                     </div>
                     <div>
-                        <input type="submit" class="btn btn-primary" value="Save">
+                        <input type="submit" class="btn btn-primary" value="Product Assign">
                     </div>
 
                 </form>
